@@ -100,7 +100,7 @@ class TextualApp(App):
                 placeholder="Enter your Groq API key...", id="api_key", password=True
             ),
             Static(
-                "Llama is AI and can make mistakes, always double check.",
+                "AI can make mistakes, always double check.",
                 id="disclaimer",
             ),
             Button(label="Vibe!", id="Vibe_Button"),
@@ -214,7 +214,7 @@ def build_vibe_suite(filename, focus_func, API_KEY, prompt, app: App):
     final_prompt = f"Code: {prompt_code}\n\n Prompt: {prompt}"
     url = "https://api.groq.com/openai/v1/chat/completions"
     payload = {
-        "model": "llama-3.3-70b-versatile",
+        "model": "openai/gpt-oss-120b",
         "messages": [
             {
                 "role": "system",
@@ -224,7 +224,7 @@ Never assume something is imported always import everything you need.""",
             },
             {"role": "user", "content": final_prompt},
         ],
-        "temperature": 0.3,
+        "temperature": 0.6,
     }
 
     # --- TUI REPLACEMENT POINT 2 ---

@@ -1,20 +1,18 @@
-import random
+import math
+PI_PRECISION = 5
 
-def game():
-    print('Welcome to my game!')
-    while True:
-        print('\n1. Start Game')
-        print('2. View Rules')
-        print('3. Quit Game')
-        choice = input('Choose an option: ')
-        if choice == '1':
-            start_game()
-        elif choice == '2':
-            view_rules()
-        elif choice == '3':
-            print('Thanks for playing!')
-            sys.exit()
-        else:
-            print('Invalid choice. Please choose a valid option.')
+def get_pi():
+    """Returns pi rounded to our precision."""
+    return round(math.pi, PI_PRECISION)
+
+def calculate_area(radius: float) -> float:
+    pi = get_pi()
+    area = pi * math.pow(radius, 2)
+    return area
+
+def main():
+    r = 5
+    print(f'Radius: {r}')
+    print(f'Area: {calculate_area(r)}')
 if __name__ == '__main__':
-    game()
+    main()
