@@ -30,3 +30,6 @@ Vibe Code Suite
 3. Enter the prompt, focus function (the function to slice in the code (Classes aren't supported but functions inside classes are supported)) and your Gemini API key.
 4. Click `Vibe!`
 It will save the file to `ai-output.py`.
+
+
+Vibe Code Suite's primary innovation is the AST Slicing Engine, which reduces noise and token cost for any LLM. While the demo uses the Groq API for accessibility on mobile hardware, the engine is designed to be provider-agnostic. It can easily be configured to connect to a local Ollama or vLLM instance for users who require a 100% offline, FOSS-only workflow. (Do this at your own risk.)
